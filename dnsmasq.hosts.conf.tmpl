@@ -1,0 +1,13 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+{{$domain := "docker"}}
+
+{{range $key, $value := .}}
+# {{ $value.Name }} ({{$value.ID}} from {{$value.Image.Repository}})
+{{$value.IP}}   {{ $value.Name }}.{{$domain}}
+{{$value.IP}}   {{ $value.Name }}
+#{{$value.IP6Global}}    {{ $value.Name }}.{{$domain}}
+
+{{end}}
+

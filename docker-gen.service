@@ -1,0 +1,12 @@
+[Unit]
+Description=A file generator that renders templates using Docker Container meta-data.
+Documentation=https://github.com/jwilder/docker-gen
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/sbin/docker-gen -config /etc/docker-gen.cfg
+
+[Install]
+WantedBy=multi-user.target
+
